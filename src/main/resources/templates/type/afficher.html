@@ -1,0 +1,25 @@
+<section class="content-header" th:replace="common/header"></section>
+
+<div class="container mt-4">
+<h1>Libellé</h1>
+  <table class="table">
+          <thead>
+            <tr>
+                <th>Nom</th>
+            </tr>
+        </thead>
+    <tbody>
+      <th:block th:each="type : ${types}">
+        <tr>
+          <td>
+            <div>
+              <p th:text="${type.getlibelle()}"></p>
+            </div>
+          </td>
+        </tr>
+      </th:block>
+    </tbody>
+  </table>
+</div>
+
+<section class="content-footer" th:replace="common/footer"></section>

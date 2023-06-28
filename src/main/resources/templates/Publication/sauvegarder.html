@@ -1,0 +1,43 @@
+<section class="content-header" th:replace="common/header"></section>
+<div>
+    <form method="post" action="#">
+        <div class="form-group">
+            <label class="col-1">Titre</label> 
+            <input class="col-1" name="title" type="text" required>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Texte</label>
+            <input name="texte" type="textarea" required>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Type</label>
+            <select name="type">
+                <th:block th:each="type : ${types}">
+                    <option th:value="${type.id}" th:text="${type.getlibelle()}"></option>
+                </th:block>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Auteur</label>
+            <input class="col-1" name="auteur" type="text" required>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Sens</label>
+            <input class="col-1" name="sens" type="text" required>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Source</label>
+            <input class="col-1" name="source" type="text" required>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Document</label>
+            <input class="col-1" name="document" type="text" required>
+        </div>
+        <div class="form-group">
+            <label class="col-1">Résumer</label>
+            <input class="col-1" name="resume" type="text" required>
+        </div>
+        <input class="btn btn-primary"type="submit" value="Publier">
+    </form>
+</div>
+<section class="content-footer" th:replace="common/footer"></section>

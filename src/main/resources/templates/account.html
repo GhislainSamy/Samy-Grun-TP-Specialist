@@ -1,0 +1,60 @@
+<section class="content-header" th:replace="common/header"></section>
+
+<div>
+    <form class="form-inline mb-2" method="POST" action="#">
+        <input name="mode" value="edit-name" hidden>
+        <div class="form-group mb-2">
+            <label class="col-2">Prenom</label>
+            <input class="col-2" type="text" name="name" th:value="${name}">
+            <input class="btn btn-primary" type="submit" value="Changer">
+        </div>
+        
+        <div class="form-group mb-2">
+            <label class="col-2">Nom</label>
+            <input class="col-2" type="text" name="surname" th:value="${surname}">
+            <input class="btn btn-primary" type="submit" value="Changer">
+        </div>
+    </form>
+</div>
+
+<div>
+    <form class="form-inline mb-2" method="POST" action="#">
+        <input name="mode" value="edit-mail" hidden>
+        <div class="form-group">
+            <label class="col-2">Adresse email</label>
+            <input class="col-2" type="email" name="email" th:value="${email}">
+            <input class="btn btn-primary" type="submit" value="Changer">
+        </div>
+    </form>
+</div>
+
+<div>
+    <form class="form-inline mb-2" method="POST" action="#">
+        <input name="mode" value="edit-password" hidden>
+        <div class="form-group mb-2">
+            <label class="col-2">Ancien mot de passe</label>
+            <input class="col-2" type="password" name="password">
+        </div>
+        <div class="form-group mb-2">
+            <label class="col-2">Nouveau mot de passe</label>
+            <input class="col-2" type="password" name="passchg">
+        </div>
+        <div class="form-group mb-2">
+            <label class="col-2">Confirmation du nouveau mot de passe</label>
+            <input class="col-2" type="password" name="passcnf">
+            <input class="btn btn-primary" type="submit" value="Changer">
+        </div>
+    </form>
+</div>
+
+<div style="outline-color: red;color: red;">
+    <form class="form-inline mb-2" method="POST" action="#">
+        <input name="mode" value="delete" hidden>
+        <input id="accept" name="passchg" value="" hidden>
+        <label class="col-2">Supprimer votre compte : Confirmer votre mot de passe</label>
+        <input type="password" name="password">
+        <input type="button" onclick="document.getElementById('accept').value = prompt('Ecrivez \'SUPPRIMER\' pour confirmer la suppression de votre compte');this.parentElement.submit();" value="Supprimer votre compte">
+    </form>
+</div>
+
+<section class="content-footer" th:replace="common/footer"></section>

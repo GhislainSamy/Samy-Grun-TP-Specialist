@@ -1,0 +1,14 @@
+<section class="content-navbar" th:fragment="navbar">
+    <nav th:if="${session.logged == true}" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <a class="dropdown-item" href="/type/afficher">Liste des libellés</a>
+                <a class="dropdown-item" href="/type/sauvegarder">Ajouter un libellé</a>
+				<a class="dropdown-item" href="/Publication/afficher">Liste des publications</a>
+                <a class="dropdown-item" href="/Publication/sauvegarder">Ajouter une publication</a>
+                <a class="dropdown-item" href="/account">Mon Compte</a>
+                <a class="dropdown-item" href="/logout">Déconnexion</a>
+            </ul>
+        </div>
+    </nav>
+</section>

@@ -1,0 +1,37 @@
+<section class="content-header" th:replace="common/header"></section>
+
+<div class="container mt-4">
+    <h1>Publication</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Auteur</th>
+                <th>Document</th>
+                <th>Résumé</th>
+                <th>Sens</th>
+                <th>Source</th>
+                <th>Texte</th>
+                <th>Titre</th>
+                <th>Type</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="publicationtab : ${publicationList}">
+                <tr>
+                    <td th:text="${publicationtab.auteur}"></td>
+                    <td th:text="${publicationtab.document}"></td>
+                    <td th:text="${publicationtab.resume}"></td>
+                    <td th:text="${publicationtab.sens}"></td>
+                    <td th:text="${publicationtab.source}"></td>
+                    <td th:text="${publicationtab.texte}"></td>
+                    <td th:text="${publicationtab.title}"></td>
+                    <td th:text="${publicationtab.type.libelle}"></td>
+                    <td th:text="${publicationtab.statuts}"></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</div>
+
+<section class="content-footer" th:replace="common/footer"></section>
